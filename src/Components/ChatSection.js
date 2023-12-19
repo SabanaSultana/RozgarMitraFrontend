@@ -87,6 +87,12 @@ export default function ChatSection({onSendClick,setInputValue,inputValue,setMes
           apiCall(inputValue);
       
     };
+    const handleEnterPress = (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        handleButtonClick();
+      }
+    };
     // Function to handle sending voice data to chat
     const handleTranscriptChange = (newTranscript) => {
       setTranscript(newTranscript);
@@ -95,14 +101,15 @@ export default function ChatSection({onSendClick,setInputValue,inputValue,setMes
     
    return (
      <>
-    <div className='flex justify-between mt-10 bg-white pt-2 pb-5 shadow-top ' id="chat-change">
+    <div className='flex justify-between mt-10 bg-white pt-2 pb-5 shadow-top chat-r ' id="chat-change">
         <img src={process.env.PUBLIC_URL + '/Language Change.png'} alt="Error Loading image" className='w-[38px] h-[35px] ml-2 cursor-pointer 'onClick={languageClickHandler} />        
-        <input type="text" placeholder='Type here...'  id="text_input"
+        <input type="text chat-input-r" placeholder='Type here...'  id="text_input"
           ref={inputRef}
-          className='border bc border-grey-700 rounded-[6px] w-[65%] p-1 text-[17px]'        
+          className='border bc border-grey-700 rounded-[6px] w-[65%] p-1 text-[17px]'    
+          onKeyDown={handleEnterPress}    
         />
         <img src={process.env.PUBLIC_URL + '/mic.png'} alt="Error Loading image" className='w-[25px] h-[28px] cursor-pointer hover:scale-105 transition transform duration-500 delay-150 ' onClick={voiceChatHandler}/>        
-        <img src={process.env.PUBLIC_URL + '/send.png'} alt="Error Loading image" className='w-[31px] h-[30px] mr-2 cursor-pointer hover:scale-110 transition transform duration-500 delay-150 ' onClick={handleButtonClick}
+        <img src={process.env.PUBLIC_URL + '/send.png'} alt="Error Loading image" className=' send-btn w-[31px] h-[30px] mr-2 cursor-pointer hover:scale-110 transition transform duration-500 delay-150 ' onClick={handleButtonClick}
          
         />
     </div>
