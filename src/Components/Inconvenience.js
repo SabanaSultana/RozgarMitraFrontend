@@ -5,13 +5,13 @@ export default function Inconvenience({setShowPopUp,showPopUp}) {
   const [inputValue, setInputValue] = useState('');
   const handleClearClick = () => {
     setInputValue(''); 
-    alert('clear click is working')
+    // alert('clear click is working')
   };
   const [isComponentVisible, setComponentVisibility] = useState(true);
   // const [isThanksVisible, setThanksVisibility] = useState(false);
   const handleSubmit = () => {
     setComponentVisibility(false);
-    alert("you submit button is working")
+    // alert("you submit button is working")
     // setThanksVisibility(true);
 
   };
@@ -20,12 +20,12 @@ export default function Inconvenience({setShowPopUp,showPopUp}) {
   }
   
   return (
-    <div className='inConvenience   bg-gray-200  border bc  w-[70%]   ml-8 rounded-[10px] '>
+    <div >
     {isComponentVisible && (
-     <div>
-        <div className="titleBar flex  justify-center items-center relatiive border-b-2 bc pb-2 pt-2  ">
+     <div className='inConvenience   bg-gray-200  border bc  w-[70%]   ml-8   rounded-[10px]'>
+        <div className="titleBar flex  justify-center items-center relative border-b-2 bc pb-2 pt-2  ">
           <div className="text montserrat ">Sorry for your inconvenience</div>
-          <div className="sound absolute top-3 right-6 ">
+          <div className="sound absolute top-3 right-2 ">
             <img src={process.env.PUBLIC_URL + '/Close Button.png'} alt="Error Loading image" className='w-[13px]'  onClick={closeHandler}/>
           </div>
       </div>
@@ -43,8 +43,8 @@ export default function Inconvenience({setShowPopUp,showPopUp}) {
                 <div className="submit  btn flex py-1 rounded-[6px] shadow-sm  mb-2 w-[20%] hover:scale-105 transition transform duration-500 delay-150 hover:shadow-md hover:-translate-y-0.5 items-center justify-center">
                    <button type="button" className='montserrat font-semibold text-[15px]'onClick={handleSubmit} >Submit</button>
                 </div>
-                <div className="cancel  bg-black text-white flex py-1 rounded-[6px] shadow-sm mb-2  w-[20%] hover:scale-105 transition transform duration-500 delay-150 hover:shadow-md hover:-translate-y-0.5 items-center justify-center">
-                   <button type="button" className='montserrat font-semibold text-[15px]' onClick={handleClearClick} >Cancel</button>
+                <div className="cancel  bg-black text-white flex py-1 rounded-[6px] shadow-sm mb-2  cursor-pointer  w-[20%] hover:scale-105 transition transform duration-500 delay-150 hover:shadow-md hover:-translate-y-0.5 items-center justify-center">
+                   <button type="button" className='montserrat font-semibold text-[15px]  ' onClick={handleClearClick} >Cancel</button>
                 </div>
            </div>
       </div>

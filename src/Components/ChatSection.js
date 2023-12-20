@@ -7,7 +7,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 
-export default function ChatSection({onSendClick,setInputValue,inputValue,setMessages}) {
+export default function ChatSection({onSendClick,setInputValue,inputValue,setMessages,isLoading,setIsLoading}) {
   const [transcript, setTranscript] = useState('');
   //Language Change
   const [language,setLanguage]=useState(false)
@@ -22,13 +22,15 @@ export default function ChatSection({onSendClick,setInputValue,inputValue,setMes
    
    // Api Call
   const apiCall=async (userInput)=>{
+    console.log("third")
     const chatbotEndpoint = 'https://rozgarmitrabackend.azurewebsites.net/chat';
+    console.log("fourth")
     let existingChatHistory = localStorage.getItem('chatHistory');
     // If chatHistory doesn't exist, initialise it as an empty array
     if (!existingChatHistory) {
       localStorage.setItem('chatHistory', JSON.stringify([]));
     } 
-    console.log("Input Data",userInput)   
+    // console.log("Input Data",userInput)   
     const requestBody = {
       user_input:userInput,
       chat_history: JSON.parse(localStorage.getItem('chatHistory'))
@@ -69,7 +71,11 @@ export default function ChatSection({onSendClick,setInputValue,inputValue,setMes
       .catch(error => {
         // Handle errors
         console.error('Error:', error.message);
+      })
+      .finally(() => {
+         setIsLoading(false);
       });
+     
   }
     
    // store user Input and api calling on button click
@@ -80,11 +86,14 @@ export default function ChatSection({onSendClick,setInputValue,inputValue,setMes
             ...prevMessages,
             { content: inputValue, type: 'human' },
           ]);
-          console.log('Input value:', inputValue);   
+          // console.log('Input value:', inputValue);   
           onSendClick();
           setInputValue(inputValue);
           // sendDataToParent(inputValue);
+          console.log("First")
           apiCall(inputValue);
+          console.log('second')
+          inputRef.current.value="";
       
     };
     const handleEnterPress = (event) => {
