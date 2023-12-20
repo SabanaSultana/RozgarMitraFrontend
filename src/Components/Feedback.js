@@ -11,11 +11,11 @@ export default function Feedback({setLikePopUp,likePopUp}) {
                 Thank you for your feedback!
             </div>
             <div className="cross p-2 mt-2">
-              <img src={process.env.PUBLIC_URL + '/Close Button.png'} alt="Error loading image " className='w-[16px]' onClick={closeHandler}/>
+              <img src={process.env.PUBLIC_URL + '/Close Button.png'} alt="Error loading image " className='w-[16px] ' onClick={closeHandler}/>
             </div>
         </div>
         <div className="like_img px-3 pb-4 pt-2">
-            <img src={process.env.PUBLIC_URL + '/Positive Feedback.png'} alt="Error loading image " className='w-[70px]' />
+            <img src={process.env.PUBLIC_URL + '/Positive Feedback.png'} alt="Error loading image " className='w-[70px] cursor-pointer' />
         </div>
     </div>
     </div>
