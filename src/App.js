@@ -25,6 +25,7 @@ function App() {
   const [dataFromChat, setDataFromChat] = useState(null);
   const [outPutDataFromChild, setoutPutDataFromChat] = useState(null);
   const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   
   const chatElementRef = useRef(null);
 
@@ -60,6 +61,7 @@ function App() {
   
   return (
     <div className="App h-screen overflow-y-hidden">
+      
       <div className=" parent box w-[420px] h-full bg-white  mx-auto border-0 border-grey-100 rounded-2xl drop-shadow-2xl flex flex-col ">
           <div className="navigationMenu  fixed_item fixed-first ">
             <NavBar
@@ -82,6 +84,8 @@ function App() {
               setInputValue={setInputValue}
               inputValue={inputValue}
               setMessages={setMessages}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
               />
             </div>
         </div>
@@ -110,11 +114,12 @@ function App() {
           ${isChatVisible?'hidden':''}
       `   
     }>
+      
         {messages.map((message, index) => {
             if (message.type === "human") {
               return <Input key={index} inputData={message.content} />;
             } else if (message.type === "ai") {
-              return <Output key={index} outputData={message.content} />;
+              return <Output key={index} outputData={message.content} isLoading={isLoading} />;
             }
             return null;
           })}

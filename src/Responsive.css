@@ -1,0 +1,182 @@
+/* galaxy */
+@media only screen and (min-width:360px) and (max-width:640px) {
+    .parent{
+        width:360px;
+        /* background:rgb(123, 0, 255); */
+        height: 640px;
+    }
+    .navBar-item{
+        height:68px;
+    }
+   .card-g-2{
+    height:280px;
+   }
+   .card-container-g{
+     height:200px;
+     overflow-y:auto;
+   }
+   .card-item-g{
+    height:70px;
+   }
+   .text-g{
+     font-size:6px;
+   }
+   .input-chat{
+    padding-right:57px;
+   }
+   .voice-text-r{
+     width:290px;
+     overflow-y: auto;
+   }
+   .voice-button-r{
+        width:290px;
+   }
+  }
+ 
+  /* iphone 14 pro max */
+  @media only screen and (min-width:430px) and (max-width:932px) {
+    .parent{
+        width:430px;
+        /* background:rgb(123, 0, 255); */
+        height: 932px;
+    }
+    .navBar-item{
+        height:85px;
+    }
+    .left-part{
+        padding-top:4px;
+    }
+    .right-part{
+        padding-top:3px;
+    }
+    .chat-r{
+        height:80px;
+    }
+    .chat-input-r{
+        height:10px;
+    }
+   .card-g-2{
+    height:380px;
+   }
+   .card-container-g{
+     height:300px;
+     overflow-y:auto;
+     margin-top:10px;
+     padding-top:30px;
+   }
+   .card-item-g{
+    height:100px;
+    width:85px;
+   }
+   .text-g{
+     font-size:9px;
+   }
+   .input-chat{
+    margin-left:210px;
+   }
+   .chat_element{
+     font-size: 20px;
+   }
+   .voicechat-r{
+        height:300px;
+   }
+   .voice-text-r{
+     width:320px;
+     overflow-y: auto;
+   }
+   .voice-button-r{
+        width:300px;
+   }
+  }
+/* Samsung galaxy */
+@media only screen and (min-width:360px) and (max-width:740px) {
+    .parent{
+        width:360px;
+        /* background:rgb(123, 0, 255); */
+        height: 740px;
+    }
+    .navBar-item{
+        height:68px;
+    }
+   .card-g-2{
+    height:300px;
+   }
+   .card-container-g{
+     height:250px;
+     overflow-y:auto;
+   }
+   .card-item-g{
+    height:80px;
+   }
+   .text-g{
+     font-size:7px;
+   }
+   .input-chat{
+    padding-right:57px;
+   }
+   .voice-text-r{
+     width:290px;
+     overflow-y: auto;
+   }
+   .voice-button-r{
+        width:290px;
+   }
+  }
+  /* Samsung s20 */
+  @media only screen and (min-width:412px) and (max-width:915px) {
+    .parent{
+        width:412px;
+        /* background:rgb(123, 0, 255); */
+        height: 915px;
+    }
+    .navBar-item{
+        height:75px;
+    }
+    .left-part{
+        padding-top:4px;
+    }
+    .right-part{
+        padding-top:3px;
+    }
+    .chat-r{
+        height:70px;
+    }
+    .chat-input-r{
+        height:10px;
+    }
+   .card-g-2{
+    height:380px;
+   }
+   .card-container-g{
+     height:300px;
+     overflow-y:auto;
+     margin-top:10px;
+     padding-top:30px;
+   }
+   .card-item-g{
+    height:100px;
+    width:85px;
+   }
+   .text-g{
+     font-size:9px;
+   }
+   .input-chat{
+    margin-left:210px;
+   }
+   .chat_element{
+     font-size: 20px;
+   }
+   .voicechat-r{
+        height:300px;
+   }
+   .voice-text-r{
+     width:320px;
+     overflow-y: auto;
+   }
+   .voice-button-r{
+        width:300px;
+   }
+  }
+  
+
+ 

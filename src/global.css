@@ -200,8 +200,10 @@ select {
 .input-margin{
   margin-left:140px;
 }
-
-
+/* Read aloud */
+.read-aloud-container {
+  width: 30px; 
+}
 
   
 
